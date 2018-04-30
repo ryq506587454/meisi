@@ -1,0 +1,48 @@
+<!--pages/course/course.wxml-->
+
+<view class='coursePage'>
+  <include src="../compont/page-title.wxml" />
+  <view class='top'>
+    <image src='{{topImg}}' />
+  </view>
+  <view class='courseIteams'>
+    <view class='course-iteam'>
+      <image src='{{courseImgs[0]}}' />
+      <text class='courseName'>美思健康减脂课
+      </text>
+      <text class='courseInfo' decode='true'>&nbsp;&nbsp;&nbsp;{{courseInfo[0]}}
+      </text>
+      <button class='courseBtn' size='mini'>
+      <text>查看详情</text>        
+      </button>
+    </view>
+    <view class='course-iteam'>
+      <image src='{{courseImgs[1]}}' />
+      <text class='courseName'>美思男神增肌课
+      </text>
+      <text class='courseInfo' decode='true'>&nbsp;&nbsp;&nbsp;{{courseInfo[1]}}
+      </text>
+      <button class='courseBtn' size='mini'>
+      <text>查看详情</text>        
+      </button>
+    </view><view class='course-iteam'>
+      <image src='{{courseImgs[2]}}' />
+      <text class='courseName'>美思完美塑形课
+      </text>
+      <text class='courseInfo' decode='true'>&nbsp;&nbsp;&nbsp;{{courseInfo[2]}}
+      </text>
+      <button class='courseBtn' size='mini'>
+      <text>查看详情</text>        
+      </button>
+    </view><view class='course-iteam'>
+      <image src='{{courseImgs[3]}}' />
+      <text class='courseName'>美思健康瑜伽课
+      </text>
+      <text class='courseInfo' decode='true'>&nbsp;&nbsp;&nbsp;{{courseInfo[3]}}
+      </text>
+      <button class='courseBtn' size='mini'>
+      <text>查看详情</text>        
+      </button>
+    </view>
+  </view>
+</view>

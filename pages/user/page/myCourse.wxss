@@ -1,0 +1,128 @@
+/* pages/user/page/myCourse.wxss */
+@import "../../compont/page-title.wxss";
+.myCoursePage{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0 0;
+  box-sizing: border-box;
+}
+.top{
+  display: flex;
+  flex-direction:row;
+  justify-content: left;
+  width: 100%;
+  height: 70rpx;
+}
+.icon{
+  display: flex;
+  flex-direction:column;
+  justify-content: center;
+  font-size:18px; 
+  font-weight:600; 
+  margin-left:15%; 
+}
+.top-title{
+  display: flex;
+  flex-direction:column;
+  justify-content: center;
+  font-size:18px; 
+  margin-left:5%; 
+}
+.icon2{
+  display: flex;
+  flex-direction:column;
+  justify-content: center;
+  font-size:36rpx; 
+  font-weight:600; 
+   margin-left:35%;   
+}
+.no-appo{
+  margin-top: 50px;
+  height: 200rpx;
+  display: flex;
+  flex-direction:row;
+  justify-content: center;
+}
+.contant{
+  height: 100%;
+  width: 100%;
+  background: rgb(255, 247, 230);
+  display: flex;
+  flex-direction:column;
+  justify-content: center;
+}
+.myCourse{
+  display: flex;
+  flex-direction:row-reverse; 
+  height: 350rpx;
+  width: 90%;
+  margin: 3% 5%;
+  background: rgb(233, 83, 48);
+  border-radius: 15px; 
+}
+.myCourse-contant{
+  position: relative;
+  height: 100%;
+  width: 94%;
+  background: white;
+  border-top-right-radius: 14px;
+  border-bottom-right-radius: 14px;
+}
+.courseName{
+  position:absolute;
+  top: 30rpx;
+  left: 20rpx;
+  color: red;
+}
+.startTime{
+  position:absolute;
+  top: 100rpx;
+  left: 20rpx;
+  font-size:13px;
+  font-family: "微软雅黑";
+  font-weight:600;  
+}
+.duringTime{
+  position:absolute;
+  top: 150rpx;
+  left: 20rpx;
+  font-size:13px;
+  font-family: "微软雅黑";
+  font-weight:600;  
+}
+.appoTime{
+  position:absolute;
+  top: 150rpx;
+  left: 240rpx;
+  font-size:13px;
+  font-family: "微软雅黑";
+  font-weight:600;  
+}
+.line{
+  position:absolute;
+  top: 220rpx;  
+  width:100%;
+  height:6rpx;
+  background:#aaa;
+}
+.quiteAppo{
+  position:absolute;
+  top: 250rpx;  
+  left: 380rpx;
+  background: white;
+  border-radius: 70px;
+  border:4rpx solid red;
+  font-size: 40px;
+}
+.quiteAppo text{
+  font-size: 15px;
+}  
+.foot{
+  height: 200rpx;
+  display: flex;
+  flex-direction:row;
+  justify-content: center;
+}

@@ -1,0 +1,10 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="welcomePage">    
+      <image  class="welcomePage-logo" src="{{welcomeImg}}" background-size="cover"></image>
+      <text class="welcomePage-motto">{{logo}}</text>    
+  </view> 
+  <view class="logomotto">
+    <text class="logomotto-motto">{{motto}}</text>
+  </view>
+</view>

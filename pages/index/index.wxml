@@ -1,0 +1,51 @@
+<!--index.wxml-->
+<view class="indexContainer">
+ <include src="../compont/page-title.wxml" />
+   <swiper class='swiper' indicator-dots="ture" autoplay="ture" interval="3000" duration="1000">
+    <block wx:for="{{swiperImgs}}" wx:key="swiperImgs">
+      <swiper-item>
+        <image src="{{item}}" class="slide-image"/>
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class='hotCourse'>
+    <view class='hC-header'>
+      <text class='hC-headerBest'>精品课程</text>
+      <text class='hC-headerAll'>全部精品</text>
+    </view>
+    <view class='hC-content'>
+        <view class='hC-content-item' wx:for="{{sugImgs}}" wx:key="sugImgs">
+          <text class="hC-content-item-title">
+            标题123456789
+          </text>
+          <image src="{{item}}"/>
+        </view>
+    </view>
+  </view>
+<view class="meisiAdvice">
+  <view class='mA-header'>
+    <text class='mA-headerBest'>MeiSI推荐</text>
+    <text class='mA-headerAll'>推荐文章</text>
+  </view>
+  <view class='mA-content'> 
+    <view class='mA-content-item'>
+      <text class='mA-content-item-title'>
+      饮食建议
+      </text>
+      <image src="{{adviceImgs[0]}}"/>
+    </view>
+    <view class='mA-content-item'>
+      <text class='mA-content-item-title'>
+      运动建议
+      </text>
+      <image src="{{adviceImgs[1]}}"/>
+    </view>
+    <view class='mA-content-item'>
+      <text class='mA-content-item-title'>
+      瘦身建议
+      </text>
+      <image src="{{adviceImgs[2]}}"/>
+    </view>
+   </view>
+</view>
+</view>

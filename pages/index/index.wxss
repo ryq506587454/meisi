@@ -1,0 +1,98 @@
+/**index.wxss**/
+@import "../compont/page-title.wxss";
+.indexContainer{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0 0;
+  box-sizing: border-box;
+}
+.swiper{
+  margin-top: 1px;
+  width: 100%;
+  height: 400rpx;
+}
+.slide-image{
+  width: 100%;
+  height: 100%;
+}
+.hotCourse,.meisiAdvice{
+  margin-top:3px; 
+}
+.hC-header,.mA-header{
+  display: flex;
+  justify-content: space-between;
+  border-left:3px solid #74787c; 
+  align-items: center;
+}
+.hC-headerBest,.mA-headerBest{
+  font-family: "微软雅黑";
+  margin: 5px 0px 3px 8px;
+  font-size: 16px;
+  font-weight: 600;
+}
+.hC-headerAll,.mA-headerAll{
+  color: green;
+  margin: 5px 8px 3px 0px;
+  font-size: 13px;
+}
+.hC-content{
+  display: flex;
+  flex-direction: row;
+  flex-wrap:wrap; 
+  justify-content: center;
+  margin: 4px 0px;
+}
+.hC-content-item{
+  height: 250rpx;
+  width: 47%;
+  background: gold;
+  margin: 2px 3px;
+  position: relative;
+}
+.hC-content-item image{
+  height: 100%;
+  width: 100%;
+}
+.hC-content-item-title{ 
+  position: absolute;
+  bottom: 0px;  
+  color: white;
+  font-family: "微软雅黑";
+  font-size: 10px;
+  background:-webkit-linear-gradient(bottom,rgba(0,0,0,1),rgba(0, 0, 0,0));
+  height: 125rpx;
+  width: 98%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1% 1%;
+}
+.mA-content{
+  display: flex;
+  flex-direction: row;
+  flex-wrap:wrap; 
+  justify-content: center;
+  margin: 4px 0px;
+}
+.mA-content-item{
+  margin: 5px 0px;
+  height: 275rpx;
+  width: 94%;
+  position: relative;
+}
+.mA-content-item-title{
+  position: absolute;
+  top: 25px;
+  left:25px;
+  color: white;
+  font-weight: 700;
+  font-family: "微软雅黑";
+  font-size: 20px;
+  
+}
+.mA-content-item image{
+  height: 100%;
+  width: 100%;
+}

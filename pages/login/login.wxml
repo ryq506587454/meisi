@@ -1,0 +1,25 @@
+<view class='loginPage'>
+  <view class='login-loge'>
+    <image src='{{logoImg}}'/>
+  </view>
+  <view class='login-input'>
+    <view class="login-item">
+      <text class='login-item-title'>手机号:</text>
+      <view class='login-item-input'>
+        <input bindinput='telInput' />
+      </view>
+    </view>
+    <view class="login-item">
+      <text class='login-item-title' decode='true'>密&nbsp;&nbsp;&nbsp;码:</text>
+      <view class='login-item-input'>
+        <input bindinput='passwordInput' password='true' />
+      </view>
+    </view>
+    <view class='login-btn'>
+      <button  catchtap='userLogin' type="primary">登陆</button>
+    </view>
+    <view class="login-weixin">
+       <image bindtap='weixinLogin' src='{{wechatImg}}'/>
+    </view>
+  </view>
+</view>

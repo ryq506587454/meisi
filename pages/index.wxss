@@ -1,0 +1,25 @@
+/**index.wxss**/
+.welcomePage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.welcomePage-logo {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+  border: 3px solid black;
+}
+.welcomePage-motto {
+  margin-top:20px; 
+  color: #aaa;
+}
+.logomotto{
+  margin-top: 100px;
+}
+.logomotto-motto {
+  font-size: 20px;
+  font-weight:600; 
+}

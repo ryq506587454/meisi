@@ -1,0 +1,43 @@
+{
+  "pages": [
+    "pages/course/course",
+    "pages/index",
+    "pages/user/page/myCourse",
+    "pages/user/user",
+    "pages/login/login",
+    "pages/index/index",
+    "pages/compont/page-title"
+    
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarTitleText": "MeiSi健身",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#7A7E83",
+    "selectedColor": "#3cc51f",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "images/index.png",
+        "selectedIconPath": "images/index_sel.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/course/course",
+        "iconPath": "images/course.png",
+        "selectedIconPath": "images/course_sel.png",
+        "text": "课程"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "iconPath": "images/user.png",
+        "selectedIconPath": "images/user_sel.png",
+        "text": "用户"
+      }
+    ]
+  }
+}

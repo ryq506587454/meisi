@@ -1,0 +1,32 @@
+<!--pages/user/user.wxml-->
+<view class="userPage">
+  <view class='userInfo'>
+    <view class="userInfo-img">
+       <image src='{{wechatImg}}'/>
+    </view>
+    <text class='userInfo-name'>用户名: {{userInfo.name}}
+    </text>
+  </view>
+  <view class='actioniteams'>
+    <view class='order' bindtap='toMyCourse'>
+      <text class='order-title'  decode='true'><text class='iconfont icon-dingdanguanli'></text>&nbsp;&nbsp; 我的课程 </text>
+       <text class='icon iconfont icon-arrowright' />
+    </view>
+    <view class='order'>
+      <text class='order-title' decode='true'><text class='iconfont icon-huiyuanguanli'></text>&nbsp;&nbsp; 会员卡&nbsp;&nbsp;&nbsp;</text>
+       <text class='icon iconfont icon-arrowright'/>
+    </view>
+    <view class='order'>
+      <text class='order-title' decode='true'><text class='iconfont icon-jichuguanli'></text>&nbsp;&nbsp; 修改信息</text>
+      <text class='icon iconfont icon-arrowright' />
+    </view>
+    <view class='order'>
+      <text class='order-title' decode='true'><text class='iconfont icon-xiaoxiguanli'></text>&nbsp;&nbsp; 系统通知</text>
+      <text class='icon iconfont icon-arrowright' />   
+    </view>
+    <view class='order'>
+      <text class='order-title' decode='true'><text class='iconfont icon-iconfontphone'></text>&nbsp;&nbsp; 关于我们</text>
+      <text class='icon iconfont icon-arrowright' />   
+    </view>
+  </view>
+</view>
