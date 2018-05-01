@@ -1,0 +1,91 @@
+/*for波浪线*/
+.circle1{
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: white;
+  position: absolute;
+  bottom: -7px;
+  left: 3%;
+}
+.circle2{
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: white;
+  position: absolute;
+  bottom: -7px;
+  left: 13%;
+}
+.circle3{
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: white;
+  position: absolute;
+  bottom: -7px;
+  left: 23%;
+}
+.circle4{
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: white;
+  position: absolute;
+  bottom: -7px;
+  left:33%;
+}
+.circle5{
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: white;
+  position: absolute;
+  bottom: -7px;
+  left:43%;
+}
+.circle6{
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: white;
+  position: absolute;
+  bottom: -7px;
+  left: 53%;
+}
+.circle7{
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: white;
+  position: absolute;
+  bottom: -7px;
+  left: 63%;
+}
+.circle8{
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: white;
+  position: absolute;
+  bottom: -7px;
+  left: 73%;
+}
+.circle9{
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: white;
+  position: absolute;
+  bottom: -7px;
+  left:83%;
+}
+.circle10{
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: white;
+  position: absolute;
+  bottom: -7px;
+  left: 93%;
+}

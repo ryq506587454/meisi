@@ -1,0 +1,49 @@
+/* pages/course/page/appointment.wxss */
+@import "../../compont/page-title.wxss";
+.appoPage{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0 0;
+  box-sizing: border-box;
+}
+.content{ 
+  width: 100%;
+  height: 700rpx;
+  background:rgb(245, 245, 245);
+}
+.courseInfo{
+  margin-top:25rpx; 
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.infoItam{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height:70rpx;
+  background: white; 
+  border-bottom: 1px solid gainsboro;
+}
+.left{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 16px;
+  width: 25%;
+  margin-left:5%; 
+  font-weight: 600;
+  text-align: left;
+}
+.right{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 14px;
+  margin-right: 5%;
+  width: 65%;
+  color: #8B8682;
+  text-align: right;
+}

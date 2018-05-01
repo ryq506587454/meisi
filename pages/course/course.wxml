@@ -12,9 +12,11 @@
       </text>
       <text class='courseInfo' decode='true'>&nbsp;&nbsp;&nbsp;{{courseInfo[0]}}
       </text>
+      <navigator url="page/courseDetail?courseType=减脂" hover-class="navigator-hover">
       <button class='courseBtn' size='mini'>
       <text>查看详情</text>        
       </button>
+      </navigator>   
     </view>
     <view class='course-iteam'>
       <image src='{{courseImgs[1]}}' />
@@ -22,27 +24,35 @@
       </text>
       <text class='courseInfo' decode='true'>&nbsp;&nbsp;&nbsp;{{courseInfo[1]}}
       </text>
+      <navigator url="page/courseDetail?courseType=增肌" hover-class="navigator-hover">
       <button class='courseBtn' size='mini'>
       <text>查看详情</text>        
       </button>
-    </view><view class='course-iteam'>
+      </navigator>   
+    </view>
+    <view class='course-iteam'>
       <image src='{{courseImgs[2]}}' />
       <text class='courseName'>美思完美塑形课
       </text>
       <text class='courseInfo' decode='true'>&nbsp;&nbsp;&nbsp;{{courseInfo[2]}}
       </text>
+      <navigator url="page/courseDetail?courseType=塑形" hover-class="navigator-hover">
       <button class='courseBtn' size='mini'>
       <text>查看详情</text>        
       </button>
-    </view><view class='course-iteam'>
+      </navigator>   
+    </view>
+    <view class='course-iteam'>
       <image src='{{courseImgs[3]}}' />
       <text class='courseName'>美思健康瑜伽课
       </text>
       <text class='courseInfo' decode='true'>&nbsp;&nbsp;&nbsp;{{courseInfo[3]}}
       </text>
+      <navigator url="page/courseDetail?courseType=瑜伽" hover-class="navigator-hover">
       <button class='courseBtn' size='mini'>
       <text>查看详情</text>        
       </button>
+      </navigator>   
     </view>
   </view>
 </view>

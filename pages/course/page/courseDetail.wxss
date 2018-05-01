@@ -1,0 +1,94 @@
+/* pages/course/page/courseDetail.wxss */
+@import "../../compont/page-title.wxss";
+@import "../../compont/circle.wxss";
+.courseDetailPage{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0 0;
+  box-sizing: border-box;
+}
+.page-title-top{
+  height: 100rpx;
+  width: 100%; 
+  font-size: 20px;
+  font-weight: 500;
+  font-family: "微软雅黑";
+}
+.courseDetail-content{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top:1px; 
+  height:100%;
+  width: 100%;
+  background:rgb(245, 245, 245);
+}
+.courseItem{
+  display: flex;
+  flex-direction: column;
+  height: 350rpx;
+  width: 90%;
+  margin: 3% 5%;
+  background: red;
+  border-radius: 15px; 
+}
+.courseName{
+  width: 100%;
+  height: 50%;
+  background:rgb(123, 221, 250);
+  border-top-left-radius: 14px;
+  border-top-right-radius: 14px;
+  position: relative;
+}
+.courseName text{
+  position: absolute;
+  font-size:20px; 
+  top: 20rpx;
+  left: 40rpx;
+  color: white;
+}
+.courseName textarea{
+  position: absolute;
+  font-size:15px; 
+  top: 80rpx;
+  width: 100%;
+  color: white;
+  height: 50%;
+}
+.courseInfo{
+  width: 100%;
+  height: 50%;
+  background:white;
+  border-bottom-left-radius: 14px;
+  border-bottom-right-radius: 14px;
+  position: relative;
+}
+.courseInfo text{
+  font-weight:600; 
+}
+.number{
+  font-size: 14px;
+  position: absolute; 
+  top: 15rpx; 
+  left: 5%;
+}
+.time{
+  font-size: 14px;
+  position: absolute; 
+  top: 60rpx; 
+  left: 5%;
+}
+.rotal{
+  font-size: 14px;
+  position: absolute; 
+  top:105rpx;
+  left: 5%; 
+}
+.foot{
+  height: 100rpx;
+  display: flex;
+  flex-direction:row;
+  justify-content: center;
+}

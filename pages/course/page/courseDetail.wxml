@@ -1,0 +1,35 @@
+<!--pages/course/page/courseDetail.wxml-->
+<view class='courseDetailPage'>
+  <view class='page-title-top'>
+    <text>课程列表
+    </text>
+  </view>
+  <view class='courseDetail-content'>
+    <block wx:for="{{courseItems}}" wx:for-item="course" wx:key="course">
+     <navigator url="appointment?courseId={{course.courseId}}" hover-class="navigator-hover">
+        <view class='courseItem'>
+          <view class='courseName'>     
+          <block wx:for="{{circleClass}}" wx:for-item="circle" wx:key="circle">
+            <view class='{{circle}}' />
+          </block>   
+          <text>{{course.courseName}}
+          </text>
+          <textarea disabled="true" value='     {{course.courseIntro}}' />
+          </view>
+          <view class="courseInfo"> 
+          <text class="number iconfont icon-createtask"> 课程编号: {{course.courseId}}
+          </text>     
+          <text class="time iconfont icon-time"> 开课时间：{{course.startDate}} (1h)
+          </text> 
+          <text class="rotal iconfont icon-mine"> 已报人数：({{course.user.length}}/{{course.totalNumber}})
+            </text>   
+          </view>
+        </view>
+        </navigator>
+      </block>    
+    <view class='foot'>
+        <text>--无更多--
+        </text>
+    </view>
+  </view>
+</view>

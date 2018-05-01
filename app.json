@@ -1,13 +1,19 @@
 {
   "pages": [
-    "pages/course/course",
-    "pages/index",
-    "pages/user/page/myCourse",
-    "pages/user/user",
-    "pages/login/login",
-    "pages/index/index",
-    "pages/compont/page-title"
+      "pages/course/course",
+    "pages/course/page/appointment",
+  
+    "pages/course/page/courseDetail",
     
+    "pages/index",
+    
+    "pages/user/page/myCourse",
+    "pages/user/user",   
+
+    "pages/index/index",
+    "pages/compont/page-title",
+    
+    "pages/login/login"
   ],
   "window": {
     "backgroundTextStyle": "light",
