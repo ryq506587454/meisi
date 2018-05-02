@@ -1,19 +1,19 @@
 {
-  "pages": [
-      "pages/course/course",
-    "pages/course/page/appointment",
-  
+  "pages": [  
+   
+    "pages/index/index",
+
+    "pages/course/course",
     "pages/course/page/courseDetail",
+    "pages/course/page/appointment",
     
-    "pages/index",
     
     "pages/user/page/myCourse",
-    "pages/user/user",   
+    "pages/user/user",     
 
-    "pages/index/index",
+    "pages/index",
     "pages/compont/page-title",
-    
-    "pages/login/login"
+    "pages/login/login"    
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -22,7 +22,7 @@
   },
   "tabBar": {
     "color": "#7A7E83",
-    "selectedColor": "#3cc51f",
+    "selectedColor": "black",
     "borderStyle": "black",
     "backgroundColor": "#ffffff",
     "list": [

@@ -1,5 +1,10 @@
 <view class='loginPage'>
   <view class='login-loge'>
+  <navigator url="../index/index" open-type="switchTab" hover-class="other-navigator-hover">
+    <text class='icon iconfont icon-fanhui' />
+    <text class='top'>返回首页
+    </text>  
+  </navigator>
     <image src='{{logoImg}}'/>
   </view>
   <view class='login-input'>

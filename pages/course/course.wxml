@@ -1,5 +1,4 @@
 <!--pages/course/course.wxml-->
-
 <view class='coursePage'>
   <include src="../compont/page-title.wxml" />
   <view class='top'>
@@ -12,7 +11,7 @@
       </text>
       <text class='courseInfo' decode='true'>&nbsp;&nbsp;&nbsp;{{courseInfo[0]}}
       </text>
-      <navigator url="page/courseDetail?courseType=减脂" hover-class="navigator-hover">
+      <navigator url="page/courseDetail?courseType=瘦身" hover-class="navigator-hover">
       <button class='courseBtn' size='mini'>
       <text>查看详情</text>        
       </button>

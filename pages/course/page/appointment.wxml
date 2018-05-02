@@ -10,31 +10,41 @@
       </text>
     </view>
   </view>
+  <view class='top'>
+       <image src='{{topImg}}' />
+  </view>
   <view class='content'>
     <view class='courseInfo'>
       <view class='infoItam'>
-      <text class='left'>课程编号:
-      </text>
-      <text class='right'>{{courseInfo[0].courseId}}
-      </text >
+        <text class='left'>课程类型:
+        </text>
+        <text class='right'>{{courseInfo.courseType}}
+        </text >
       </view>
       <view class='infoItam'>
-       <text class='left'>课程名称:
+        <text class='left'>课程名称:
       </text>
-      <text class='right'>{{courseInfo[0].courseName}}
-      </text >
+        <text class='right'>{{courseInfo.courseName}}
+        </text >
       </view>
       <view class='infoItam'>
        <text class='left'>选课人数:
-      </text>
-      <text class='right'>{{courseInfo[0].user.length}} / {{courseInfo[0].totalNumber}}
-      </text >
+        </text>
+        <text class='right'>{{courseInfo.user.length}} / {{courseInfo.totalNumber}}
+        </text >
       </view>
-      <view class='infoItam'>
-       <text class='left'>开课时间:
-      </text>
-      <text class='right'>{{courseInfo[0].startDate}}
-      </text >
+      <picker bindchange="bindPickerChange" value="{{index}}" range="{{time}}">
+        <view class='infoItam'>      
+        <text class='left'>开课时间:
+        </text>
+        <text class='right'>{{time[index]}}
+        </text >          
+      </view>
+      </picker>
+      <view class='btn'>
+        <button class='courseBtn' size='mini'>
+          <text>点击预约</text>        
+        </button>
       </view>
     </view>
   </view>
