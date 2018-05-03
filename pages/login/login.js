@@ -47,9 +47,9 @@ Page({
       header: {
         'content-type': 'application/x-www-form-urlencoded' 
       },
-      success: function (res) {      
+      success: function (res) {  
+        console.log(res.data)    
         app.globalData.userInfo = res.data
-        console.log(app.globalData.userInfo)
         if (!app.globalData.userInfo){
           wx.showModal({
             title: '登录失败',

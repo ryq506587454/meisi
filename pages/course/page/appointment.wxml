@@ -42,7 +42,7 @@
       </view>
       </picker>
       <view class='btn'>
-        <button class='courseBtn' size='mini'>
+        <button bindtap='appointmen' class='courseBtn' size='mini'>
           <text>点击预约</text>        
         </button>
       </view>

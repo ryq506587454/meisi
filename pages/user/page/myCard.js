@@ -1,4 +1,4 @@
-// pages/user/page/myCourse.js.
+// pages/user/page/myCard.js
 const app = getApp()
 Page({
 
@@ -6,6 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    cardImg:"../image/card-top.png",
     userInfo:{}
   },
 
@@ -16,13 +17,11 @@ Page({
     this.setData({
       userInfo: app.globalData.userInfo
     })
-    console.log(this.data.userInfo.appt.length)
-  },
-  onShow: function () {
-   
   }
 
  
+  
+  
 
 
 })

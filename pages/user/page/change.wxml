@@ -1,0 +1,8 @@
+<!--pages/user/page/change.wxml-->
+<view class='changePages'>
+  <text>设置{{flag}}:
+  </text>
+  <view class='changeInput'>
+    <input bindinput='changeInput' placeholder='{{changeInfo}}' type='{{inputType}}' />
+  </view>
+</view>

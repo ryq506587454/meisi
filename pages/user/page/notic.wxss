@@ -1,0 +1,43 @@
+/* pages/user/page/notic.wxss */
+.noticePage{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 0;
+  box-sizing: border-box;
+  background: #CDCDC1;
+  height: 100vh;
+}
+.notice{
+  position: absolute;
+  height: 80%;
+  width: 92%;
+  top: 10%;
+  left: 3%;
+  background: white;
+  border: 5px solid goldenrod;
+  border-radius:20px; 
+}
+.noticeTitle{
+  direction: flex;
+  flex-direction:column;
+  justify-content: center; 
+  height: 12%;
+  width: 100%;
+  border-bottom:3px solid gainsboro; 
+}
+.notice-title{
+  height: 100%;
+  width: 100%;
+  text-align: center;
+}
+.notice-bottom{
+  direction: flex;
+  flex-direction:column;
+  justify-content: center; 
+  height: 12%;
+  width: 100%;
+  border-bottom:3px solid gainsboro; 
+
+}

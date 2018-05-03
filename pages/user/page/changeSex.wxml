@@ -1,0 +1,11 @@
+<!--pages/user/page/change.wxml-->
+<view class='changePages'>
+  <text>设置性别:
+  </text>
+   <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+    <view class='changeInput'>
+    <text >{{sex}}
+    </text>
+    </view>
+  </picker>
+</view>

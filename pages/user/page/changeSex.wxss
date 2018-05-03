@@ -1,0 +1,23 @@
+/* pages/user/page/change.wxss */
+.changePages{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 0;
+  box-sizing: border-box;
+  background: #E8E8E8;
+}
+.changeInput{
+  display: flex;
+  flex-direction: column;
+  justify-content: top;
+  background: white;
+  height: 10%;
+  margin-top: 3%;
+}
+.changeInput input{
+  width: 100%;
+  height: 100%
+}

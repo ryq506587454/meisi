@@ -1,0 +1,39 @@
+<!--pages/user/page/myCard.wxml-->
+<view class='myCardPage'>
+  <view class='myCard'>
+  <text class='myCard-title'>美思健身房
+  </text>
+  <text class='myCard-title2'>MeiSi健身工作室全心全意为您服务
+  </text>
+  <text class='myCard-title3'>VIP
+  </text>
+  <text class='myCard-title4'>会员卡
+  </text>
+  </view>
+  <view class='myCard-top'>
+  </view>
+  <view class='myCard-content'>
+    <view class='myCard-info'>
+      <view class='info-item'>
+        <text class='item-title'>会员卡编号：{{userInfo.card.cardId}}
+        </text>
+      </view>
+      <view class='info-item'>  
+        <text class='item-title'>会员卡类型：{{userInfo.card.type}}
+        </text>
+      </view>
+      <view class='info-item'>
+        <text class='item-title'>办卡日期：{{userInfo.card.startTime}}
+        </text>
+      </view>
+      <view class='info-item'>
+        <text class='item-title'>到期日期：{{userInfo.card.endTime}}
+        </text>
+      </view>
+      <view class='info-item-bottom'>
+        <text class='item-title'>剩余次数：{{userInfo.card.restTimes}} 次
+        </text>
+      </view>     
+    </view>
+  </view>
+</view>

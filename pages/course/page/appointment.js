@@ -10,7 +10,7 @@ Page({
     time: [],
     timeone: [],
     index: 0,
-    courseInfo:null,
+    courseInfo:{},
     userInfo:{}
   },
   bindPickerChange: function (e) {
@@ -22,15 +22,15 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // if (!app.globalData.userInfo) {
-    //   wx.redirectTo({
-    //     url: '../../login/login',
-    //   })
-    // } else {
-    //   this.setData({
-    //     userInfo:app.globalData.userInfo
-    //   })
-    // }
+    if (!app.globalData.userInfo) {
+      wx.redirectTo({
+        url: '../../login/login',
+      })
+    } else {
+      this.setData({
+        userInfo:app.globalData.userInfo
+      })
+    }
     console.log(options.courseId)
     var self = this;
     wx.request({
@@ -42,10 +42,10 @@ Page({
       header: {
         'content-type': 'application/x-www-form-urlencoded'
       },
-      success: function (res) {
-        console.log(res.data)
+      success: function (res) {       
         self.setData({
          courseInfo: res.data,
+         courseId: res.data.courseId,
          timeone: res.data.startDate
         });
         for (var i in self.data.timeone) {
@@ -58,19 +58,78 @@ Page({
     })    
   },
  appointmen:function(){
-   wx.request({
-     url: 'http://localhost:8080/MeiSI/Course_meidaAppt',
-     method: 'POST',
-     data: {
-       courseId: options.courseId,
-       userId: userInfo.userId
-     },
-     header: {
-       'content-type': 'application/x-www-form-urlencoded'
-     },
+   var self = this
+   wx.showModal({    
+     title: '预约确定',
+     content: '请检查您的约课信息是否正确',
      success: function (res) {
-       console.log(res.data)
+       if (res.confirm) {
+         console.log(self.data.courseInfo.courseId)
+         wx.request({
+           url: 'http://localhost:8080/MeiSI/Course_meidaAppt',
+           method: 'POST',
+           data: {
+             courseId: self.data.courseInfo.courseId,
+             userId: self.data.userInfo.userId,
+             courseDate: self.data.time[self.data.index]
+           },
+           header: {
+             'content-type': 'application/x-www-form-urlencoded'
+           },
+           success: function (res) {
+             if(res.data === "OK"){
+               wx.request({
+                 url: 'http://localhost:8080/MeiSI/User_meidalogin',
+                 method: 'POST',
+                 data: {
+                   userId: self.data.userInfo.userId,
+                   password: self.data.userInfo.password
+                 },
+                 header: {
+                   'content-type': 'application/x-www-form-urlencoded'
+                 },
+                 success: function (res) {
+                   app.globalData.userInfo = res.data
+                   console.log(app.globalData.userInfo)
+                   wx.showModal({
+                     title: '预约提示',
+                     content: '恭喜你，所选课程预约成功',
+                     success: function (res) {
+                       wx.switchTab({
+                         url: "../../index/index"
+                       })
+                     }
+                   })
+                 }
+               })
+             } else if (res.data === "TIMEERRO"){
+               wx.showModal({
+                 title: '预约失败',
+                 content: '已有相同时间段的课程',
+                 success: function (res) {
+                   wx.switchTab({
+                     url: "../../index/index"
+                   })
+                 }
+               })
+             } else if (res.data === "TIMESERRO"){
+               wx.showModal({
+                 title: '预约失败',
+                 content: '您的剩余此时不足，请充值',
+                 success: function (res) {
+                   wx.switchTab({
+                     url: "../../index/index"
+                   })
+                 }
+               })
+             }            
+           }
+         }) 
+         console.log('用户点击确定')
+       } else {
+         console.log('用户点击取消')
+       }
      }
-   })  
+   })    
  }
 })

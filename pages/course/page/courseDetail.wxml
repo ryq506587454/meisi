@@ -19,9 +19,9 @@
           <view class="courseInfo"> 
           <text class="number iconfont icon-createtask"> 课程编号: {{course.courseId}}
           </text>     
-          <text class="time iconfont icon-time"> 课程时长：{{course.courseDuration/60/60}} (1h)
+          <text class="time iconfont icon-time"> 课程时长：{{course.courseDuration/60/60}}  小时
           </text> 
-          <text class="rotal iconfont icon-mine"> 已报人数：({{course.user.length}}/{{course.totalNumber}})
+          <text class="rotal iconfont icon-mine"> 每节课人数：{{course.totalNumber}}
             </text>   
           </view>
         </view>

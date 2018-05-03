@@ -8,34 +8,34 @@
      <text class='icon2 iconfont icon-arrowright' />
   </view>
   <view class='contant'>
-    <block wx:if="{{!userInfo.course}}">
+    <block wx:if="{{userInfo.appt.length===0}}">
       <view class='no-appo'>
         <text>--没有约课信息--
         </text>
       </view>
     </block>
-    <block wx:if="{{userInfo.course}}">
-      <view class='myCourse'>
-        <view class='myCourse-contant'>
-          <text class='courseName'>测试课程
-          </text>
-          <text class='startTime'>开始时间：2018-03-09 周六 15：00
-          </text>
-          <text class='duringTime'>课程时长：1小时
-          </text>
-          <text class='appoTime'>预约时间：2018-03-09 周六
-          </text>
-          <view class="line" />
-          <button class='quiteAppo' size='mini'>
-          <text>取消预约
-          </text> 
-          </button>
+    <block wx:if="{{userInfo.appt.length!==0}}">
+      <block wx:for="{{userInfo.appt}}" wx:for-item="appt">
+        <view class='myCourse'>          
+            <view class='myCourse-contant'>
+              <text class='courseName'>{{appt.couserName}}
+              </text>
+              <text class='startTime'>开始时间：{{appt.courseTime}}
+              </text>
+              <text class='duringTime'>课程时长：{{appt.courseDuration/60/60}} 小时
+              </text>
+              <view class="line" />
+              <button class='quiteAppo' size='mini'>
+                <text>取消预约
+                </text> 
+              </button>        
+            </view>        
         </view>
-      </view>
+       </block>
       <view class='foot'>
         <text>--无更多--
         </text>
       </view>
-    </block>   
+    </block> 
   </view> 
 </view>

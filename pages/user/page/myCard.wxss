@@ -1,0 +1,88 @@
+/* pages/user/page/myCard.wxss */
+@import "../../compont/page-title.wxss";
+.myCardPage{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 0;
+  box-sizing: border-box;
+  background: #CDCDC1;
+  height: 100vh;
+}
+.myCard{
+  position: absolute;
+  top: 10%;
+  left: 3%;
+  width: 91%;
+  height: 30%;
+  background: white;
+  border-radius:20px; 
+  border: 5px solid rgb(215, 202, 153);
+}
+.myCard-top{
+  height: 25%;
+}
+.myCard-content{
+  height: 75%;
+  background: black;
+}
+.myCard-title{
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  font-size:28px;
+  font-weight:600;  
+}
+.myCard-title2{
+  position: absolute;
+  top: 32%;
+  left: 5%;
+  font-size:16px;
+  font-weight:600; 
+
+}
+.myCard-title3{
+  position: absolute;
+  top: 50%;
+  left: 20%;
+  font-size:30px;
+  font-weight:600; 
+}
+.myCard-title4{
+  position: absolute;
+  top: 50%;
+  left: 40%;
+  font-size:45px;
+  font-weight:600; 
+}
+.myCard-info{
+  position: absolute;
+  width: 91%;
+  top: 45%; 
+  left: 3%;
+  height: 48%;
+  border-radius:20px; 
+  border: 5px solid rgb(215, 202, 153);
+  background: white;
+  margin-bottom:5%; 
+}
+.info-item{
+  width: 100%;
+  height: 18%;
+  border-bottom: 5px solid rgb(215, 202, 153);
+}
+.item-title{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left:5%; 
+  width: 95%;
+  height:100%;
+  font-size: 20px;
+}
+.info-item-bottom{
+  height:21%;
+  width: 100%;
+}
+

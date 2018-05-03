@@ -1,0 +1,13 @@
+<!--pages/user/page/notic.wxml-->
+<view class='noticePage'>
+  <view class='notice'>
+    <view class='noticeTitle'>
+      <text class='notice-title'> 通     知
+      </text>
+    </view>
+    <view class="notice-content">
+    </view>
+    <view class="notice-bottom">
+    </view>
+  </view>
+</view>

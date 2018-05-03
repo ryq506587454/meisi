@@ -12,20 +12,20 @@
       <text class='order-title'  decode='true'><text class='iconfont icon-dingdanguanli'></text>&nbsp;&nbsp; 我的课程 </text>
        <text class='icon iconfont icon-arrowright' />
     </view>
-    <view class='order'>
-      <text class='order-title' decode='true'><text class='iconfont icon-huiyuanguanli'></text>&nbsp;&nbsp; 会员卡&nbsp;&nbsp;&nbsp;</text>
-       <text class='icon iconfont icon-arrowright'/>
-    </view>
-    <view class='order'>
-      <text class='order-title' decode='true'><text class='iconfont icon-jichuguanli'></text>&nbsp;&nbsp; 修改信息</text>
+    <view class='order'  bindtap='toMyInfo'>
+      <text class='order-title' decode='true'><text class='iconfont icon-jichuguanli'></text>&nbsp;&nbsp; 用户信息</text>
       <text class='icon iconfont icon-arrowright' />
     </view>
-    <view class='order'>
-      <text class='order-title' decode='true'><text class='iconfont icon-xiaoxiguanli'></text>&nbsp;&nbsp; 系统通知</text>
+    <view class='order' bindtap='toNotic'>
+      <text class='order-title'  decode='true'><text class='iconfont icon-xiaoxiguanli'></text>&nbsp;&nbsp; 系统通知</text>
       <text class='icon iconfont icon-arrowright' />   
     </view>
     <view class='order'>
       <text class='order-title' decode='true'><text class='iconfont icon-iconfontphone'></text>&nbsp;&nbsp; 关于我们</text>
+      <text class='icon iconfont icon-arrowright' />   
+    </view>
+    <view class='order' bindtap='quite'>
+      <text class='order-title'  decode='true'><text class='iconfont icon-close'></text>&nbsp;&nbsp; 用户注销         </text>
       <text class='icon iconfont icon-arrowright' />   
     </view>
   </view>

@@ -1,0 +1,38 @@
+<!--pages/user/page/myInfo.wxml-->
+<view class='myInfoPages'>
+  <view class='infoItems'>
+    <view class='info-item' >
+        <text class="item-left">会员账号：
+        </text>
+        <text class="item-right">{{userInfo.userId}}
+        </text>             
+    </view>    
+    <view class='info-item' bindtap='toChangeName'>
+        <text class="item-left">会员姓名：
+        </text>
+        <text class="item-right">{{userInfo.name}}
+        </text> 
+        <text class='icon iconfont icon-arrowright' />   
+    </view>   
+      <view class='info-item' bindtap='toChangeSex'>
+        <text class="item-left">会员性别：
+        </text>
+        <text class="item-right">{{userInfo.sex}}
+        </text>
+        <text class='icon iconfont icon-arrowright' />          
+    </view>   
+    <view class='info-item' bindtap='toChangeTel'>
+        <text class="item-left">会员电话：
+        </text>
+        <text class="item-right">{{userInfo.tel}}
+        </text> 
+        <text class='icon iconfont icon-arrowright' />  
+    </view>
+    <view class='info-item' bindtap='toMyCard'>
+        <text class="item-left">用户会员卡：
+        </text>
+        <text class="item-right" />
+        <text class='icon iconfont icon-arrowright' />    
+    </view>
+  </view>
+</view>

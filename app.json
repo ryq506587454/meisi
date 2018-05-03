@@ -1,19 +1,20 @@
 {
-  "pages": [  
-   
+  "pages": [
+    "pages/user/page/notic",
     "pages/index/index",
-
+    "pages/user/page/myInfo",
+    "pages/user/user",
     "pages/course/course",
     "pages/course/page/courseDetail",
     "pages/course/page/appointment",
-    
-    
     "pages/user/page/myCourse",
-    "pages/user/user",     
-
+    "pages/user/page/myCard",
     "pages/index",
     "pages/compont/page-title",
-    "pages/login/login"    
+    "pages/login/login",
+    "pages/user/page/change",
+    "pages/user/page/changeSex"
+    
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -39,12 +39,33 @@ Page({
       })
     }  
   },
-
-
+  toMyInfo:function(){
+    wx.navigateTo({
+      url: 'page/myInfo',
+    })
+  },
   toMyCourse:function(){
     wx.navigateTo({
       url: 'page/myCourse',
     })
+  },
+  toNotic:function(){
+    wx.navigateTo({
+      url: 'page/notic',
+    })
+  },
+  quite: function () {
+    app.globalData.userInfo=null
+    wx.showModal({
+      title: '提示',
+      content: '注销成功',
+      success:function(){
+        wx.redirectTo({
+          url: '../login/login',
+        })
+      }
+    })
   }
+
   
 })
