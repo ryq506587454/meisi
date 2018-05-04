@@ -30,9 +30,22 @@ Page({
   */
   onShow: function () {
     if (!app.globalData.userInfo) {
-      wx.redirectTo({
-        url: '../login/login',
-      })
+      wx.showModal({
+        title: '登陆通知',
+        cancelText:'返回首页',
+        content: '用户未登陆,请先登陆,否则无法继续',
+        success: function (res) {
+          if (res.confirm) {
+            wx.redirectTo({
+              url: '../login/login',
+            })
+          } else if (res.cancel) {         
+            wx.switchTab({
+              url: '../index/index',
+            })
+          }
+        }
+      })         
     } else {
       this.setData({
         userInfo: app.globalData.userInfo
@@ -52,6 +65,11 @@ Page({
   toNotic:function(){
     wx.navigateTo({
       url: 'page/notic',
+    })
+  },
+  toAboutUs:function(){
+    wx.navigateTo({
+      url: 'page/aboutUs',
     })
   },
   quite: function () {

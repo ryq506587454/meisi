@@ -1,13 +1,14 @@
 /* pages/user/page/notic.wxss */
 .noticePage{
   width: 100%;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding: 0 0;
   box-sizing: border-box;
   background: #CDCDC1;
-  height: 100vh;
+ 
 }
 .notice{
   position: absolute;
@@ -23,21 +24,41 @@
   direction: flex;
   flex-direction:column;
   justify-content: center; 
-  height: 12%;
-  width: 100%;
-  border-bottom:3px solid gainsboro; 
-}
-.notice-title{
-  height: 100%;
+  height: 10%;
   width: 100%;
   text-align: center;
-}
-.notice-bottom{
-  direction: flex;
-  flex-direction:column;
-  justify-content: center; 
-  height: 12%;
-  width: 100%;
+  font-size:26px; 
+  font-weight: 600;
   border-bottom:3px solid gainsboro; 
-
+}
+.notice-content{
+  height: 85%;
+  width: 100%;
+}
+.notice-item{
+  height:10%; 
+  width:100%;
+  direction: flex;
+  flex-direction:row;
+  justify-content: space-between; 
+   flex-wrap:nowrap;
+  border-bottom:3px solid gainsboro; 
+}
+.notice-info{
+  text-align: left;
+  display: inline-block;
+  line-height: 35px;
+  height: 100%;
+  width: 47%;
+  margin-left: 3%;
+}
+.notice-date{
+  text-align: right;
+  display: inline-block;
+  line-height: 35px;
+  height: 100%;
+  width: 42%;
+  margin-right: 8%;
+  font-size:18px;
+  font-weight: 600; 
 }

@@ -5,10 +5,6 @@
       <text>预约界面
       </text>
     </view>
-    <view class='page-title-bottom'>      
-      <text class='iconfont icon-shengyin' decode='true'>&nbsp;&nbsp;点击返回键重新选择
-      </text>
-    </view>
   </view>
   <view class='top'>
        <image src='{{topImg}}' />

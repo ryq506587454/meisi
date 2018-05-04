@@ -11,15 +11,16 @@
   <view class='hotCourse'>
     <view class='hC-header'>
       <text class='hC-headerBest'>精品课程</text>
-      <text class='hC-headerAll'>全部精品</text>
+      <text class='hC-headerAll' bindtap='toAllCourse'>全部课程</text>
     </view>
     <view class='hC-content'>
-        <view class='hC-content-item' wx:for="{{sugImgs}}" wx:key="sugImgs">
-          <text class="hC-content-item-title">
-            标题123456789
-          </text>
-          <image src="{{item}}"/>
-        </view>
+      <block wx:for-index="index" wx:for="{{sugImgs}}" wx:if="{{index<4}}" wx:key="sugImgs" >
+        <navigator class='hC-content-item' url="../course/page/appointment?courseId={{courseInfo[index].courseId}}" hover-class="navigator-hover">
+            <text class="hC-content-item-title">热门课程：{{courseInfo[index].courseName}}
+            </text>
+            <image src="{{item}}"/>         
+        </navigator>
+      </block> 
     </view>
   </view>
 <view class="meisiAdvice">

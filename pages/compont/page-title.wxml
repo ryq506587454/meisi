@@ -4,8 +4,5 @@
     <text>MeiSi健身工作室
     </text>
   </view>
-  <view class='page-title-bottom'>      
-    <text class='iconfont icon-shengyin' decode='true'>&nbsp;&nbsp;爱上运动，享受健康。
-    </text>
-  </view>
+  
 </view>

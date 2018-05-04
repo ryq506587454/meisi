@@ -1,13 +1,31 @@
 <!--pages/user/page/notic.wxml-->
 <view class='noticePage'>
   <view class='notice'>
-    <view class='noticeTitle'>
-      <text class='notice-title'> 通     知
-      </text>
+    <view class='noticeTitle'>通     知
     </view>
     <view class="notice-content">
-    </view>
-    <view class="notice-bottom">
+      <view class='notice-item'>
+        <text class ="notice-info">五一放假通知
+        </text>  
+        <text class ="notice-date iconfont icon-arrowright">
+        </text>        
+      </view>
+      <view class='notice-item'>    
+      </view>
+      <view class='notice-item'>    
+      </view>
+      <view class='notice-item'>    
+      </view>
+      <view class='notice-item'>    
+      </view>
+      <view class='notice-item'>    
+      </view>
+      <view class='notice-item'>    
+      </view>
+      <view class='notice-item'>    
+      </view>
+      <view class='notice-item'>
+      </view>
     </view>
   </view>
 </view>

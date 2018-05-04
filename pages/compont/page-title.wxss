@@ -3,16 +3,15 @@
 .page-title{
   display: flex;
   flex-direction: column;
-  height: 120rpx;
+  height: 90rpx;
   width: 100%;
 }
 .page-title-top{
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 60%;
+  height: 100%;
   width: 100%;
-  border-bottom: 2px solid gainsboro;
 }
 .page-title-top text{
   font-family: "黑体";

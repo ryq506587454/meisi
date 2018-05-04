@@ -18,14 +18,14 @@
       <block wx:for="{{userInfo.appt}}" wx:for-item="appt">
         <view class='myCourse'>          
             <view class='myCourse-contant'>
-              <text class='courseName'>{{appt.couserName}}
+              <text class='courseName'>{{appt.courseName}}
               </text>
               <text class='startTime'>开始时间：{{appt.courseTime}}
               </text>
               <text class='duringTime'>课程时长：{{appt.courseDuration/60/60}} 小时
               </text>
               <view class="line" />
-              <button class='quiteAppo' size='mini'>
+              <button class='quiteAppo' bindtap='quiteAppt' data-apptId='{{appt.apptId}}' data-courseName='{{appt.courseName}}' size='mini'>
                 <text>取消预约
                 </text> 
               </button>        

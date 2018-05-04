@@ -23,9 +23,22 @@ Page({
    */
   onLoad: function (options) {
     if (!app.globalData.userInfo) {
-      wx.redirectTo({
-        url: '../../login/login',
-      })
+      wx.showModal({
+        title: '登陆通知',
+        cancelText: '返回首页',
+        content: '用户未登陆,请先登陆,否则无法继续',
+        success:function(res){
+          if (res.confirm) {
+            wx.redirectTo({
+              url: '../../login/login',
+            })
+          }else if (res.cancel) {
+            wx.switchTab({
+              url: '../../index/index',
+            })
+          }  
+        }
+      })    
     } else {
       this.setData({
         userInfo:app.globalData.userInfo
@@ -61,7 +74,7 @@ Page({
    var self = this
    wx.showModal({    
      title: '预约确定',
-     content: '请检查您的约课信息是否正确',
+     content: '请检查您的约课信息是否正确，取消预约将不退还扣除分数',
      success: function (res) {
        if (res.confirm) {
          console.log(self.data.courseInfo.courseId)
@@ -96,7 +109,7 @@ Page({
                      content: '恭喜你，所选课程预约成功',
                      success: function (res) {
                        wx.switchTab({
-                         url: "../../index/index"
+                         url: "../course"
                        })
                      }
                    })
@@ -108,7 +121,7 @@ Page({
                  content: '已有相同时间段的课程',
                  success: function (res) {
                    wx.switchTab({
-                     url: "../../index/index"
+                     url: "../course"
                    })
                  }
                })
@@ -118,7 +131,7 @@ Page({
                  content: '您的剩余此时不足，请充值',
                  success: function (res) {
                    wx.switchTab({
-                     url: "../../index/index"
+                     url: "../course"
                    })
                  }
                })

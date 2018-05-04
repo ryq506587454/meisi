@@ -1,10 +1,11 @@
 {
   "pages": [
-    "pages/user/page/notic",
     "pages/index/index",
+    "pages/user/page/notic",
+    "pages/course/course",
+    "pages/user/page/aboutUs",
     "pages/user/page/myInfo",
     "pages/user/user",
-    "pages/course/course",
     "pages/course/page/courseDetail",
     "pages/course/page/appointment",
     "pages/user/page/myCourse",
@@ -13,8 +14,8 @@
     "pages/compont/page-title",
     "pages/login/login",
     "pages/user/page/change",
-    "pages/user/page/changeSex"
-    
+    "pages/user/page/changeSex",
+    "pages/index/page/eatAdvice"
   ],
   "window": {
     "backgroundTextStyle": "light",

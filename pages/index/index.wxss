@@ -78,7 +78,6 @@
 }
 .mA-content-item{
   margin: 5px 0px;
-  height: 275rpx;
   width: 94%;
   position: relative;
 }
@@ -93,6 +92,5 @@
   
 }
 .mA-content-item image{
-  height: 100%;
   width: 100%;
 }
