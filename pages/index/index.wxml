@@ -26,7 +26,6 @@
 <view class="meisiAdvice">
   <view class='mA-header'>
     <text class='mA-headerBest'>MeiSI推荐</text>
-    <text class='mA-headerAll'>推荐文章</text>
   </view>
   <view class='mA-content'> 
     <view class='mA-content-item'>

@@ -4,6 +4,12 @@
     <text>课程列表
     </text>
   </view>
+ <view class="section">
+  <picker bindchange="bindPickerChange" value="{{index}}" range="{{courseName}}">
+    <view class="picker">当前选择教练：{{courseName[index]}}
+    </view>
+  </picker>
+</view>
   <view class='courseDetail-content'>
     <block wx:for="{{courseItems}}" wx:for-item="course" wx:key="course">
      <navigator url="appointment?courseId={{course.courseId}}" hover-class="navigator-hover">

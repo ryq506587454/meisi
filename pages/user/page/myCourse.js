@@ -35,24 +35,29 @@ Page({
         'content-type': 'application/x-www-form-urlencoded'
       },
       success: function (res) {
-        console.log(1234556)
-        wx.request({
-          url: 'http://localhost:8080/MeiSI/User_meidalogin',
-          method: 'POST',
-          data: {
-            userId: self.data.userInfo.userId,
-            password: self.data.userInfo.password
-          },
-          header: {
-            'content-type': 'application/x-www-form-urlencoded'
-          },
+        wx.showModal({
+          title: '退订提示',
+          content: '所选课程退订成功',
           success: function (res) {
-            app.globalData.userInfo = res.data
-            wx.switchTab({
-              url: '../user',
-            }) 
+            wx.request({
+              url: 'http://localhost:8080/MeiSI/User_meidalogin',
+              method: 'POST',
+              data: {
+                userId: self.data.userInfo.userId,
+                password: self.data.userInfo.password
+              },
+              header: {
+                'content-type': 'application/x-www-form-urlencoded'
+              },
+              success: function (res) {
+                app.globalData.userInfo = res.data
+                wx.switchTab({
+                  url: '../user',
+                })
+              }
+            })            
           }
-        })
+        })        
       }
     })    
   }

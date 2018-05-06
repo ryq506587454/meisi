@@ -29,6 +29,12 @@
         <text class='right'>{{courseInfo.user.length}} / {{courseInfo.totalNumber}}
         </text >
       </view>
+      <view class='infoItam'>
+       <text class='left'>课程教练:
+        </text>
+        <text class='right'>{{courseInfo.coach.coachName}}
+        </text >
+      </view>
       <picker bindchange="bindPickerChange" value="{{index}}" range="{{time}}">
         <view class='infoItam'>      
         <text class='left'>开课时间:

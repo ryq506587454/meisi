@@ -17,7 +17,9 @@ Page({
       "circle9",
       "circle10"    
     ],
-    courseItems:[]
+    index: 0,
+    courseItems:[],
+    courseName:[],
   },
 
   /**
@@ -35,12 +37,42 @@ Page({
       header: {
         'content-type': 'application/x-www-form-urlencoded'
       },
-      success: function (res) {
-        console.log(res.data)       
+      success: function (res) {   
         self.setData({
-          courseItems:res.data
-        });
+          courseItems:res.data         
+        });     
+        var coachList=['全部教练']
+        for (var i of self.data.courseItems){
+          coachList.push(i.coach.coachName)
+        }
+        self.setData({
+          courseName:coachList
+        })
       }
     })    
-  }
+  },
+  bindPickerChange: function (e) {
+    this.setData({
+      index: e.detail.value
+    })
+    var self = this
+    wx.request({
+      url: 'http://localhost:8080/MeiSI/Course_meidaFindByCoach',
+      method: 'POST',
+      data: {
+        coachName: self.data.courseName[self.data.index],
+        courseType: self.data.courseItems[0].courseType
+      },
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
+      },
+      success: function (res) {
+        self.setData({
+          courseItems:res.data
+        });  
+      }
+    }) 
+  },
+  
+
 })
