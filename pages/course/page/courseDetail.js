@@ -41,12 +41,25 @@ Page({
         self.setData({
           courseItems:res.data         
         });     
-        var coachList=['全部教练']
-        for (var i of self.data.courseItems){
-          coachList.push(i.coach.coachName)
-        }
-        self.setData({
-          courseName:coachList
+       
+        wx.request({
+          url: 'http://localhost:8080/MeiSI/User_FindCoachByType',
+          method: 'POST',
+          data: {          
+            courseType: self.data.courseItems[0].courseType
+          },
+          header: {
+            'content-type': 'application/x-www-form-urlencoded'
+          },         
+          success: function (res) {
+            var coachList = ['全部教练']          
+            for (var i of res.data.list) {
+              coachList.push(i.coachName)
+            }
+            self.setData({
+              courseName: coachList
+            })
+          }
         })
       }
     })    
