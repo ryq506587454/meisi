@@ -23,11 +23,11 @@
           <textarea disabled="true" value='     {{course.courseIntro}}' />
           </view>
           <view class="courseInfo"> 
-          <text class="number iconfont icon-createtask"> 课程编号: {{course.courseId}}
+          <text class="number iconfont icon-createtask"  decode='true'> 课程编号:&nbsp;&nbsp;&nbsp;{{course.courseId}}
           </text>     
-          <text class="time iconfont icon-time"> 课程时长：{{course.courseDuration/60/60}}  小时
+          <text class="time iconfont icon-time"> 课程时长： {{course.courseDuration/60}}  分钟
           </text> 
-          <text class="rotal iconfont icon-mine"> 每节课人数：{{course.totalNumber}}
+          <text class="rotal iconfont icon-mine"> 已报人数： {{course.totalNumber}} 人
             </text>   
           </view>
         </view>
