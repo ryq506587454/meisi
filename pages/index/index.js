@@ -37,7 +37,7 @@ Page({
   onShow: function (options) {
     var self = this
     wx.request({
-      url: 'http://localhost:8080/MeiSI/Course_meidaAdvice',
+      url: 'https://ryq.dongff.xyz/MeiSi/Course_meidaAdvice',
       method: 'POST',
       data: {
       },

@@ -11,34 +11,9 @@ Page({
     tel:null,
     password: null,
   },
-  weixinLogin: function(){ 
-    wx.getSetting({
-      success(res) {
-        if (!res.authSetting['scope.userInfo']) {
-          wx.authorize({
-            scope: 'scope.userInfo',
-            success() {
-              wx.getUserInfo({
-                success: res => {
-                  console.log(res);
-                  app.globalData.userInfo = res.userInfo                  
-                  wx.switchTab({
-                    url: "../index/index"
-                  })
-                },
-                fail: function (res) {
-                  console.log(res);
-                }
-              })
-            }
-          })
-        }
-      }
-    })    
-  },
   userLogin:function(){
     wx.request({
-      url: 'http://localhost:8080/MeiSI/User_meidalogin', 
+      url: 'https://ryq.dongff.xyz/MeiSi/User_meidalogin', 
       method: 'POST',
       data: {
         userId: this.data.tel,
@@ -67,6 +42,9 @@ Page({
             url: "../index/index"
           })
         }
+      },
+      fail:function(err){
+        console.log(err);
       }
     })
   },

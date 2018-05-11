@@ -22,7 +22,7 @@
               </text>
               <text class='startTime'>开始时间：{{appt.courseTime}}
               </text>
-              <text class='duringTime'>课程时长：{{appt.courseDuration/60/60}} 小时
+              <text class='duringTime'>课程时长：{{appt.courseDuration/60}} 分钟
               </text>
               <view class="line" />
               <button class='quiteAppo' bindtap='quiteAppt' data-apptId='{{appt.apptId}}' data-courseName='{{appt.courseName}}' size='mini'>

@@ -47,7 +47,7 @@ Page({
     console.log(options.courseId)
     var self = this;
     wx.request({
-      url: 'http://localhost:8080/MeiSI/Course_meidaFindByID',
+      url: 'https://ryq.dongff.xyz/MeiSi/Course_meidaFindByID',
       method: 'POST',
       data: {
         courseId: options.courseId,
@@ -79,7 +79,7 @@ Page({
        if (res.confirm) {
          console.log(self.data.courseInfo.courseId)
          wx.request({
-           url: 'http://localhost:8080/MeiSI/Course_meidaAppt',
+           url: 'https://ryq.dongff.xyz/MeiSi/Course_meidaAppt',
            method: 'POST',
            data: {
              courseId: self.data.courseInfo.courseId,
@@ -92,7 +92,7 @@ Page({
            success: function (res) {
              if(res.data === "OK"){
                wx.request({
-                 url: 'http://localhost:8080/MeiSI/User_meidalogin',
+                 url: 'https://ryq.dongff.xyz/MeiSi/User_meidalogin',
                  method: 'POST',
                  data: {
                    userId: self.data.userInfo.userId,

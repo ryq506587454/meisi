@@ -23,42 +23,53 @@ Page({
   },
   quiteAppt:function(e){
     var self = this
-    wx.request({
-      url: 'http://localhost:8080/MeiSI/User_mediaQuiteAppt',
-      method: 'POST',
-      data: {
-        userId:self.data.userInfo.userId,
-        appId: e.currentTarget.dataset.apptid,
-        courseName: e.currentTarget.dataset.coursename
-      },
-      header: {
-        'content-type': 'application/x-www-form-urlencoded'
-      },
+    wx.showModal({
+      title: '退订提示',
+      content: '确认退订吗？',
       success: function (res) {
-        wx.showModal({
-          title: '退订提示',
-          content: '所选课程退订成功',
+        if (res.confirm) {  
+        wx.request({
+          url: 'https://ryq.dongff.xyz/MeiSi/User_mediaQuiteAppt',
+          method: 'POST',
+          data: {
+            userId: self.data.userInfo.userId,
+            appId: e.currentTarget.dataset.apptid,
+            courseName: e.currentTarget.dataset.coursename
+          },
+          header: {
+            'content-type': 'application/x-www-form-urlencoded'
+          },
           success: function (res) {
-            wx.request({
-              url: 'http://localhost:8080/MeiSI/User_meidalogin',
-              method: 'POST',
-              data: {
-                userId: self.data.userInfo.userId,
-                password: self.data.userInfo.password
-              },
-              header: {
-                'content-type': 'application/x-www-form-urlencoded'
-              },
+            wx.showModal({
+              title: '退订提示',
+              content: '所选课程退订成功',
+              showCancel:false,
               success: function (res) {
-                app.globalData.userInfo = res.data
-                wx.switchTab({
-                  url: '../user',
+                wx.request({
+                  url: 'https://ryq.dongff.xyz/MeiSi/User_meidalogin',
+                  method: 'POST',
+                  data: {
+                    userId: self.data.userInfo.userId,
+                    password: self.data.userInfo.password
+                  },
+                  header: {
+                    'content-type': 'application/x-www-form-urlencoded'
+                  },
+                  success: function (res) {
+                    app.globalData.userInfo = res.data
+                    wx.switchTab({
+                      url: '../user',
+                    })
+                  }
                 })
               }
-            })            
+            })
           }
-        })        
+        })
+        } else if (res.cancel) {
+          console.log('用户点击取消')
+        }          
       }
-    })    
+    })       
   }
 })

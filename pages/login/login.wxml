@@ -23,8 +23,5 @@
     <view class='login-btn'>
       <button  catchtap='userLogin' type="primary">登陆</button>
     </view>
-    <view class="login-weixin">
-       <image bindtap='weixinLogin' src='{{wechatImg}}'/>
-    </view>
   </view>
 </view>

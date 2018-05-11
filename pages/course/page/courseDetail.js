@@ -29,7 +29,7 @@ Page({
     console.log(options.courseType)
     var self = this;
     wx.request({
-      url: 'http://localhost:8080/MeiSI/Course_meidaFindByType',
+      url: 'https://ryq.dongff.xyz/MeiSi/Course_meidaFindByType',
       method: 'POST',
       data: {
         courseType: options.courseType,
@@ -43,7 +43,7 @@ Page({
         });     
        
         wx.request({
-          url: 'http://localhost:8080/MeiSI/User_FindCoachByType',
+          url: 'https://ryq.dongff.xyz/MeiSi/User_FindCoachByType',
           method: 'POST',
           data: {          
             courseType: self.data.courseItems[0].courseType
@@ -70,7 +70,7 @@ Page({
     })
     var self = this
     wx.request({
-      url: 'http://localhost:8080/MeiSI/Course_meidaFindByCoach',
+      url: 'https://ryq.dongff.xyz/MeiSi/Course_meidaFindByCoach',
       method: 'POST',
       data: {
         coachName: self.data.courseName[self.data.index],
