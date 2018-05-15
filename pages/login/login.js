@@ -13,7 +13,7 @@ Page({
   },
   userLogin:function(){
     wx.request({
-      url: 'https://ryq.dongff.xyz/MeiSi/User_meidalogin', 
+      url: 'http://localhost:8080/MeiSI/User_meidalogin', 
       method: 'POST',
       data: {
         userId: this.data.tel,

@@ -19,10 +19,4 @@ Page({
       userInfo: app.globalData.userInfo
     })
   }
-
- 
-  
-  
-
-
 })

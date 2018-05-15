@@ -5,8 +5,15 @@
     </text>
   </view>
  <view class="section">
-  <picker bindchange="bindPickerChange" value="{{index}}" range="{{courseName}}">
-    <view class="picker">当前选择教练：{{courseName[index]}}
+  <picker bindchange="bindPickerChange" value="{{index}}" range="{{coachName}}">
+    <view class="picker">当前选择教练：{{coachName[index]}}
+    </view>
+  </picker>
+</view>
+ <view class="section">
+  <picker mode="date" value="{{date}}"  bindchange="bindDateChange">
+    <view class="picker">
+      当前选择时间：{{date}}
     </view>
   </picker>
 </view>

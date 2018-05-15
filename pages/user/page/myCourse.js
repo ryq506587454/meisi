@@ -29,7 +29,7 @@ Page({
       success: function (res) {
         if (res.confirm) {  
         wx.request({
-          url: 'https://ryq.dongff.xyz/MeiSi/User_mediaQuiteAppt',
+          url: 'http://localhost:8080/MeiSI/User_mediaQuiteAppt',
           method: 'POST',
           data: {
             userId: self.data.userInfo.userId,
@@ -46,7 +46,7 @@ Page({
               showCancel:false,
               success: function (res) {
                 wx.request({
-                  url: 'https://ryq.dongff.xyz/MeiSi/User_meidalogin',
+                  url: 'http://localhost:8080/MeiSI/User_meidalogin',
                   method: 'POST',
                   data: {
                     userId: self.data.userInfo.userId,

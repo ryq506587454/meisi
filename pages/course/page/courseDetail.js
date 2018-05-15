@@ -19,20 +19,24 @@ Page({
     ],
     index: 0,
     courseItems:[],
-    courseName:[],
+    courseType:"",
+    coachName:[],
+    date: "全部日期"
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(options.courseType)
     var self = this;
+    self.setData({
+      courseType: options.courseType
+    })
     wx.request({
-      url: 'https://ryq.dongff.xyz/MeiSi/Course_meidaFindByType',
+      url: 'http://localhost:8080/MeiSI/Course_meidaFindByType',
       method: 'POST',
       data: {
-        courseType: options.courseType,
+        courseType: self.data.courseType
       },
       header: {
         'content-type': 'application/x-www-form-urlencoded'
@@ -40,13 +44,12 @@ Page({
       success: function (res) {   
         self.setData({
           courseItems:res.data         
-        });     
-       
+        });          
         wx.request({
-          url: 'https://ryq.dongff.xyz/MeiSi/User_FindCoachByType',
+          url: 'http://localhost:8080/MeiSI/User_FindCoachByType',
           method: 'POST',
           data: {          
-            courseType: self.data.courseItems[0].courseType
+            courseType: self.data.courseType
           },
           header: {
             'content-type': 'application/x-www-form-urlencoded'
@@ -57,7 +60,7 @@ Page({
               coachList.push(i.coachName)
             }
             self.setData({
-              courseName: coachList
+             coachName: coachList
             })
           }
         })
@@ -65,27 +68,120 @@ Page({
     })    
   },
   bindPickerChange: function (e) {
+    var self = this
     this.setData({
       index: e.detail.value
     })
-    var self = this
-    wx.request({
-      url: 'https://ryq.dongff.xyz/MeiSi/Course_meidaFindByCoach',
-      method: 'POST',
-      data: {
-        coachName: self.data.courseName[self.data.index],
-        courseType: self.data.courseItems[0].courseType
-      },
-      header: {
-        'content-type': 'application/x-www-form-urlencoded'
-      },
-      success: function (res) {
-        self.setData({
-          courseItems:res.data
-        });  
-      }
-    }) 
+    if (self.data.index == 0 && self.data.date == "全部日期"){
+      wx.request({
+        url: 'http://localhost:8080/MeiSI/Course_meidaFindByType',
+        method: 'POST',
+        data: {
+          courseType: self.data.courseType
+        },
+        header: {
+          'content-type': 'application/x-www-form-urlencoded'
+        },
+        success: function (res) {
+          self.setData({
+            courseItems: res.data
+          });        
+        }
+      }) 
+    } else if (self.data.index != 0 && self.data.date == "全部日期"){
+      wx.request({
+        url: 'http://localhost:8080/MeiSI/Course_meidaFindByCoach',
+        method: 'POST',
+        data: {
+          coachName: self.data.coachName[self.data.index],
+          courseType: self.data.courseType
+        },
+        header: {
+          'content-type': 'application/x-www-form-urlencoded'
+        },
+        success: function (res) {
+          self.setData({
+            courseItems: res.data
+          });
+        }
+      }) 
+    } else if (self.data.index == 0 && self.data.date != "全部日期"){
+      wx.request({
+        url: 'http://localhost:8080/MeiSI/Course_meidaFindByDate',
+        method: 'POST',
+        data: {
+          courseDate: self.data.date,
+          courseType: self.data.courseType
+        },
+        header: {
+          'content-type': 'application/x-www-form-urlencoded'
+        },
+        success: function (res) {
+          self.setData({
+            courseItems: res.data
+          });
+        }
+      })
+    }else{
+      wx.request({
+        url: 'http://localhost:8080/MeiSI/Course_meidaFindByDateAndCoach',
+        method: 'POST',
+        data: {
+          courseDate: self.data.date,
+          courseType: self.data.courseType,
+          coachName: self.data.coachName[self.data.index]
+        },
+        header: {
+          'content-type': 'application/x-www-form-urlencoded'
+        },
+        success: function (res) {
+          self.setData({
+            courseItems: res.data
+          });
+        }
+      })
+    }  
   },
-  
-
+  bindDateChange: function (e) {
+    var self = this
+    this.setData({
+      date: e.detail.value
+    })
+    if (self.data.index==0){
+      wx.request({
+        url: 'http://localhost:8080/MeiSI/Course_meidaFindByDate',
+        method: 'POST',
+        data: {
+          courseDate: self.data.date, 
+          courseType: self.data.courseType       
+        },
+        header: {
+          'content-type': 'application/x-www-form-urlencoded'
+        },
+        success: function (res) {
+          self.setData({
+            courseItems: res.data
+          });
+        }
+      }) 
+    }else{
+      wx.request({
+        url: 'http://localhost:8080/MeiSI/Course_meidaFindByDateAndCoach',
+        method: 'POST',
+        data: {
+          courseDate: self.data.date,
+          courseType: self.data.courseType,
+          coachName: self.data.coachName[self.data.index]
+        },
+        header: {
+          'content-type': 'application/x-www-form-urlencoded'
+        },
+        success: function (res) {
+          self.setData({
+            courseItems: res.data
+          });
+        }
+      })
+    }
+  }
 })

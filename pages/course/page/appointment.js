@@ -11,12 +11,30 @@ Page({
     timeone: [],
     index: 0,
     courseInfo:{},
-    userInfo:{}
+    userInfo:{},
+    classNumber:null
   },
   bindPickerChange: function (e) {
     this.setData({
       index: e.detail.value
     })
+    var self = this
+    wx.request({      
+      url: 'http://localhost:8080/MeiSI/Course_FindClassNumber',
+      method: 'POST',
+      data: {
+        courseName: self.data.courseInfo.courseName,
+        courseDate: self.data.time[self.data.index]
+      },
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
+      },
+      success: function (res) {
+        self.setData({
+          classNumber:res.data
+        })
+      }
+    }) 
   },
   /**
    * 生命周期函数--监听页面加载
@@ -44,10 +62,9 @@ Page({
         userInfo:app.globalData.userInfo
       })
     }
-    console.log(options.courseId)
     var self = this;
     wx.request({
-      url: 'https://ryq.dongff.xyz/MeiSi/Course_meidaFindByID',
+      url: 'http://localhost:8080/MeiSI/Course_meidaFindByID',
       method: 'POST',
       data: {
         courseId: options.courseId,
@@ -57,8 +74,7 @@ Page({
       },
       success: function (res) {       
         self.setData({
-         courseInfo: res.data,
-         courseId: res.data.courseId,
+         courseInfo: res.data,        
          timeone: res.data.startDate
         });
         for (var i in self.data.timeone) {
@@ -67,8 +83,26 @@ Page({
         self.setData({
           time: self.data.timeone
         });
+        wx.request({
+          url: 'http://localhost:8080/MeiSI/Course_FindClassNumber',
+          method: 'POST',
+          data: {
+            courseName: self.data.courseInfo.courseName,
+            courseDate: self.data.time[self.data.index]
+          },
+          header: {
+            'content-type': 'application/x-www-form-urlencoded'
+          },
+          success: function (res) {
+            console.log(self.data.courseInfo.courseName)
+            self.setData({
+              classNumber: res.data
+            })
+          }
+        })
       }
-    })    
+    })
+         
   },
  appointmen:function(){
    var self = this
@@ -76,10 +110,9 @@ Page({
      title: '预约确定',
      content: '请检查您的约课信息是否正确，取消预约将不退还扣除分数',
      success: function (res) {
-       if (res.confirm) {
-         console.log(self.data.courseInfo.courseId)
+       if (res.confirm) {       
          wx.request({
-           url: 'https://ryq.dongff.xyz/MeiSi/Course_meidaAppt',
+           url: 'http://localhost:8080/MeiSI/Course_meidaAppt',
            method: 'POST',
            data: {
              courseId: self.data.courseInfo.courseId,
@@ -92,7 +125,7 @@ Page({
            success: function (res) {
              if(res.data === "OK"){
                wx.request({
-                 url: 'https://ryq.dongff.xyz/MeiSi/User_meidalogin',
+                 url: 'http://localhost:8080/MeiSI/User_meidalogin',
                  method: 'POST',
                  data: {
                    userId: self.data.userInfo.userId,
@@ -103,7 +136,6 @@ Page({
                  },
                  success: function (res) {
                    app.globalData.userInfo = res.data
-                   console.log(app.globalData.userInfo)
                    wx.showModal({
                      title: '预约提示',
                      content: '恭喜你，所选课程预约成功',
@@ -128,14 +160,24 @@ Page({
              } else if (res.data === "TIMESERRO"){
                wx.showModal({
                  title: '预约失败',
-                 content: '您的剩余此时不足，请充值',
+                 content: '您的剩余次数不足，请充值',
                  success: function (res) {
                    wx.switchTab({
                      url: "../course"
                    })
                  }
                })
-             }            
+             } else if (res.data === "CLASSNUMBERERRO"){
+               wx.showModal({
+                 title: '预约失败',
+                 content: '您预约的人数已满',
+                 success: function (res) {
+                   wx.switchTab({
+                     url: "../course"
+                   })
+                 }
+               })
+             }           
            }
          }) 
          console.log('用户点击确定')

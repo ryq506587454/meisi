@@ -30,7 +30,7 @@ Page({
     if (this.data.sex!==this.data.userInfo.sex){
       var self = this
       wx.request({
-        url: 'https://ryq.dongff.xyz/MeiSi/User_mediaUpdataInfo',
+        url: 'http://localhost:8080/MeiSI/User_mediaUpdataInfo',
         method: 'POST',
         data: {
           userId: self.data.userInfo.userId,
@@ -42,7 +42,7 @@ Page({
         },
         success: function (res) {
           wx.request({
-            url: 'https://ryq.dongff.xyz/MeiSi/User_meidalogin',
+            url: 'http://localhost:8080/MeiSI/User_meidalogin',
             method: 'POST',
             data: {
               userId: self.data.userInfo.userId,
