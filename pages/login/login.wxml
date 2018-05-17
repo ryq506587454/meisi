@@ -22,6 +22,8 @@
     </view>
     <view class='login-btn'>
       <button  catchtap='userLogin' type="primary">登陆</button>
+      <button class='login-btn-right'  type="primary">注册</button>
     </view>
+    
   </view>
 </view>

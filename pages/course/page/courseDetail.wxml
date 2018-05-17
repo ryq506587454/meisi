@@ -17,6 +17,12 @@
     </view>
   </picker>
 </view>
+<view class="section" bindtap='AllCourse'>  
+  <view class="picker">
+    <text>全部课程
+    </text>
+  </view>
+</view>
   <view class='courseDetail-content'>
     <block wx:for="{{courseItems}}" wx:for-item="course" wx:key="course">
      <navigator url="appointment?courseId={{course.courseId}}" hover-class="navigator-hover">

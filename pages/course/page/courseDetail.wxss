@@ -31,6 +31,12 @@
   font-weight: 600;
   margin-left:5px; 
 }
+.picker text{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
 .courseDetail-content{
   display: flex;
   flex-direction: column;

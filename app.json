@@ -1,6 +1,6 @@
 {
   "pages": [
-    
+    "pages/login/login",
     "pages/index/index",
     "pages/user/page/notic",
     "pages/course/course",
@@ -13,7 +13,7 @@
     "pages/user/page/myCard",
     "pages/index",
     "pages/compont/page-title",
-    "pages/login/login",
+    
     "pages/user/page/change",
     "pages/user/page/changeSex",
     "pages/index/page/eatAdvice"

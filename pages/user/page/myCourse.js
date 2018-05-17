@@ -16,7 +16,6 @@ Page({
     this.setData({
       userInfo: app.globalData.userInfo
     })
-    console.log(this.data.userInfo.appt.length)
   },
   onShow: function () {
    

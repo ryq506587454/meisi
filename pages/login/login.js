@@ -12,41 +12,53 @@ Page({
     password: null,
   },
   userLogin:function(){
-    wx.request({
-      url: 'http://localhost:8080/MeiSI/User_meidalogin', 
-      method: 'POST',
-      data: {
-        userId: this.data.tel,
-        password: this.data.password
-      },
-      header: {
-        'content-type': 'application/x-www-form-urlencoded' 
-      },
-      success: function (res) {  
-        console.log(res.data)    
-        app.globalData.userInfo = res.data
-        if (!app.globalData.userInfo){
-          wx.showModal({
-            title: '登录失败',
-            content: '请检查您的账号密码是否比配',
-            success: function (res) {
-              if (res.confirm) {
-                console.log('用户点击确定')
-              } else {
-                console.log('用户点击取消')
+    var self = this
+    if (self.data.tel == null || self.data.password == null || self.data.password == "" || self.data.tel == ""){
+      wx.showToast({
+        title: '登陆失败,请正确输入登录信息',
+        icon: 'none',
+        duration: 2000
+      })
+    }else{
+      wx.request({
+        url: 'http://localhost:8080/MeiSI/User_meidalogin',
+        method: 'POST',
+        data: {
+          userId: this.data.tel,
+          password: this.data.password
+        },
+        header: {
+          'content-type': 'application/x-www-form-urlencoded'
+        },
+        success: function (res) {
+          console.log(res.data)
+          app.globalData.userInfo = res.data
+          if (!app.globalData.userInfo) {
+            wx.showToast({
+              title: '登陆失败，请检查帐号密码是否正确',
+              icon: 'none',
+              duration: 2000            
+            })
+          } else {
+            wx.showToast({
+              title: '登陆成功',
+              icon: 'success',
+              duration: 1500,
+              success: function () {
+                setTimeout(function () {
+                  wx.switchTab({
+                    url: "../index/index"
+                  })
+                }, 1500)
               }
-            }
-          })
-        }else{
-          wx.switchTab({
-            url: "../index/index"
-          })
+            })
+          }
+        },
+        fail: function (err) {
+          console.log(err);
         }
-      },
-      fail:function(err){
-        console.log(err);
-      }
-    })
+      })
+    }    
   },
   telInput:function(e){
     this.setData({

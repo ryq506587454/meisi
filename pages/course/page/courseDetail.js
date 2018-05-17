@@ -183,5 +183,47 @@ Page({
         }
       })
     }
+  },
+  AllCourse:function(){
+    var self = this
+    self.setData({
+      index: 0,
+      date: "全部日期"
+    }),
+      wx.request({
+        url: 'http://localhost:8080/MeiSI/Course_meidaFindByType',
+        method: 'POST',
+        data: {
+          courseType: self.data.courseType
+        },
+        header: {
+          'content-type': 'application/x-www-form-urlencoded'
+        },
+        success: function (res) {
+          self.setData({
+            courseItems: res.data
+          });
+          wx.request({
+            url: 'http://localhost:8080/MeiSI/User_FindCoachByType',
+            method: 'POST',
+            data: {
+              courseType: self.data.courseType
+            },
+            header: {
+              'content-type': 'application/x-www-form-urlencoded'
+            },
+            success: function (res) {
+              var coachList = ['全部教练']
+              for (var i of res.data.list) {
+                coachList.push(i.coachName)
+              }
+              self.setData({
+                coachName: coachList
+              })
+            }
+          })
+        }
+      }) 
+
   }
 })
