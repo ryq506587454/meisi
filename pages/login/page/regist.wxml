@@ -1,0 +1,36 @@
+<!--pages/login/page/regist.wxml-->
+<view class='loginPage'>
+  <view class='login-loge'>
+    <image src='{{logoImg}}'/>
+  </view>
+  <view class='login-input'>
+    <view class="login-item">
+      <text class='login-item-title'>手机号:</text>
+      <view class='login-item-input'>
+        <input bindinput='telInput' type="number" />
+      </view>
+    </view>
+    <view class="login-item">
+      <text class='login-item-title' decode='true'>密&nbsp;&nbsp;&nbsp;码:</text>
+      <view class='login-item-input'>
+        <input bindinput='passwordInput'  />
+      </view>
+    </view>
+    <view class="login-item">
+      <view class='login-item-left'>
+       <text class='login-item-title'  decode='true'>验证码:
+       </text> 
+        <view class='login-item-input'>
+          <input bindinput='codeInput' type="number" />
+        </view>
+      </view>
+      <view class='login-item-right'>
+        <button catchtap='getCode' disabled="{{disabled}}" data-id="2" type="default" >{{time}}</button>
+       </view>
+    </view>
+    <view class='login-btn'>
+      <button  catchtap='regist' type="primary">注册</button>
+    </view>  
+  </view>
+</view>
+

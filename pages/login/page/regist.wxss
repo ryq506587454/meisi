@@ -1,0 +1,16 @@
+/* pages/login/page/regist.wxss */
+@import "../login.wxss";
+.login-item{
+  position: relative;
+}
+.login-item-left{
+  height: 100%;
+  width: 60%;
+}
+.login-item-right{
+  position: absolute;
+  top: 15px;
+  left: 225px;
+  width: 35%;
+  height: 100%;
+}

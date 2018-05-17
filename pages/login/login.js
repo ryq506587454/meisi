@@ -7,13 +7,12 @@ Page({
    */
   data: {
     logoImg: "../../images/MeiSiLogo-short.png", 
-    wechatImg: "../../images/WeChat.png",
-    tel:null,
-    password: null,
+    tel:"",
+    password: "" 
   },
   userLogin:function(){
     var self = this
-    if (self.data.tel == null || self.data.password == null || self.data.password == "" || self.data.tel == ""){
+    if (self.data.password == "" || self.data.tel == ""){
       wx.showToast({
         title: '登陆失败,请正确输入登录信息',
         icon: 'none',
@@ -64,13 +63,16 @@ Page({
     this.setData({
       tel:e.detail.value
     }) 
-    console.log()
   },
   passwordInput:function(e){
     this.setData({
       password: e.detail.value
     })
-    console.log()
+  },
+  userRegist:function(){
+    wx.navigateTo({
+      url: 'page/regist',
+    })
   },
   /**
    * 生命周期函数--监听页面加载

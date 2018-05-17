@@ -177,10 +177,19 @@ Page({
                    })
                  }
                })
+             } else if (res.data === "CARDERRO"){
+                wx.showModal({
+                  title: '预约失败',
+                  content: '您还没有会员卡,请充值',
+                  success: function (res) {
+                    wx.switchTab({
+                      url: "../../user"
+                    })
+                  }
+                })
              }           
            }
          }) 
-         console.log('用户点击确定')
        } else {
          console.log('用户点击取消')
        }

@@ -11,7 +11,7 @@
     <view class="login-item">
       <text class='login-item-title'>手机号:</text>
       <view class='login-item-input'>
-        <input bindinput='telInput' />
+        <input bindinput='telInput' type="number"/>
       </view>
     </view>
     <view class="login-item">
@@ -22,7 +22,7 @@
     </view>
     <view class='login-btn'>
       <button  catchtap='userLogin' type="primary">登陆</button>
-      <button class='login-btn-right'  type="primary">注册</button>
+      <button catchtap='userRegist' class='login-btn-right'  type="default">注册</button>
     </view>
     
   </view>
