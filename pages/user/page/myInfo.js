@@ -17,9 +17,7 @@ Page({
     })
   },
   onShow:function(){
-    this.setData({
-      userInfo:app.globalData.userInfo
-    })
+    this.data.userInfo = app.globalData.userInfo
   },
    toMyCard: function () {
     wx.navigateTo({

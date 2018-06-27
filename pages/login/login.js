@@ -20,7 +20,7 @@ Page({
       })
     }else{
       wx.request({
-        url: 'http://localhost:8080/MeiSI/User_meidalogin',
+        url:'http://localhost:8080/MeiSI/User_meidalogin',
         method: 'POST',
         data: {
           userId: this.data.tel,
@@ -45,8 +45,8 @@ Page({
               duration: 1500,
               success: function () {
                 setTimeout(function () {
-                  wx.switchTab({
-                    url: "../index/index"
+                  wx.navigateBack({
+                    
                   })
                 }, 1500)
               }

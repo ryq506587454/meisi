@@ -47,7 +47,7 @@ Page({
         content: '用户未登陆,请先登陆,否则无法继续',
         success:function(res){
           if (res.confirm) {
-            wx.redirectTo({
+            wx.navigateTo({
               url: '../../login/login',
             })
           }else if (res.cancel) {
@@ -101,8 +101,31 @@ Page({
           }
         })
       }
-    })
-         
+    })        
+  },
+  onShow:function(){
+    if (!app.globalData.userInfo) {
+      wx.showModal({
+        title: '登陆通知',
+        cancelText: '返回首页',
+        content: '用户未登陆,请先登陆,否则无法继续',
+        success: function (res) {
+          if (res.confirm) {
+            wx.navigateTo({
+              url: '../../login/login',
+            })
+          } else if (res.cancel) {
+            wx.switchTab({
+              url: '../../index/index',
+            })
+          }
+        }
+      })
+    } else {
+      this.setData({
+        userInfo: app.globalData.userInfo
+      })
+    }
   },
  appointmen:function(){
    var self = this
@@ -150,40 +173,30 @@ Page({
              } else if (res.data === "TIMEERRO"){
                wx.showModal({
                  title: '预约失败',
-                 content: '已有相同时间段的课程',
-                 success: function (res) {
-                   wx.switchTab({
-                     url: "../course"
-                   })
-                 }
+                 content: '已有相同时间段的课程',             
                })
              } else if (res.data === "TIMESERRO"){
                wx.showModal({
                  title: '预约失败',
                  content: '您的剩余次数不足，请充值',
                  success: function (res) {
-                   wx.switchTab({
-                     url: "../course"
+                   wx.navigateTo({
+                     url: '../../user/page/payTimes',
                    })
                  }
                })
              } else if (res.data === "CLASSNUMBERERRO"){
                wx.showModal({
                  title: '预约失败',
-                 content: '您预约的人数已满',
-                 success: function (res) {
-                   wx.switchTab({
-                     url: "../course"
-                   })
-                 }
+                 content: '您预约的课程人数已满',                
                })
              } else if (res.data === "CARDERRO"){
                 wx.showModal({
                   title: '预约失败',
-                  content: '您还没有会员卡,请充值',
+                  content: '您还没有会员卡,请先办卡',
                   success: function (res) {
-                    wx.switchTab({
-                      url: "../../user"
+                    wx.redirectTo({
+                      url: "../../user/page/pay"
                     })
                   }
                 })

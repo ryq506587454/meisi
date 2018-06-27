@@ -1,0 +1,10 @@
+<view class='noticePage'>
+  <view class='notice'>
+    <view class='noticeTitle'>通     知
+    </view>
+    <view class="notice-content">
+      <textarea>{{notice.noticeDetail}}
+      </textarea>
+    </view>
+  </view>
+</view>

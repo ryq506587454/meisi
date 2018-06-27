@@ -36,7 +36,7 @@ Page({
         content: '用户未登陆,请先登陆,否则无法继续',
         success: function (res) {
           if (res.confirm) {
-            wx.redirectTo({
+            wx.navigateTo({
               url: '../login/login',
             })
           } else if (res.cancel) {         
@@ -78,12 +78,10 @@ Page({
       title: '提示',
       content: '注销成功',
       success:function(){
-        wx.redirectTo({
+        wx.navigateTo({
           url: '../login/login',
         })
       }
     })
-  }
-
-  
+  } 
 })

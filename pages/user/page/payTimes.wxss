@@ -1,0 +1,6 @@
+/* pages/user/page/payTimes.wxss */
+@import "changeSex.wxss";
+.sure{
+  margin-top:5%; 
+  width: 20%;
+}

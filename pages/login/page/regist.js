@@ -75,6 +75,7 @@ Page({
           'content-type': 'application/x-www-form-urlencoded'
         },
         success: function (res) {
+        console.log(res)
           if(res.data=="存在"){
             wx.showToast({
               title: '获取验证码失败,该手机号已被注册',
@@ -89,6 +90,7 @@ Page({
             self.setData({
               rightcode: res.data
             })
+            console.log(res.data)
           }        
         }
       })
@@ -139,13 +141,13 @@ Page({
             success: function (res) {
               app.globalData.userInfo = res.data      
                 wx.showToast({
-                  title: '注册成功',
-                  icon: 'success',
+                  title: '注册成功,请尽快完善个人信息',
+                  icon: 'none',
                   duration: 1500,
                   success: function () {
                     setTimeout(function () {
                       wx.switchTab({
-                        url: "../../index/index"
+                        url: "../../user/user"
                       })
                     }, 1500)
                   }

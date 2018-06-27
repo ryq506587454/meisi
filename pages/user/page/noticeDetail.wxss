@@ -1,0 +1,6 @@
+/* pages/user/page/noticeDetail.wxss */
+@import "notic.wxss";
+.notice-content textarea{
+  height: 100%;
+  width: 100%;
+}

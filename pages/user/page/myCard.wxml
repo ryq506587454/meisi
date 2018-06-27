@@ -23,17 +23,17 @@
         </text>
       </view>
       <view class='info-item'>
-        <text class='item-title'>办卡日期：{{userInfo.card.startTime}}
+        <text class='item-title'>办卡日期：{{startTime}}
         </text>
       </view>
       <view class='info-item'>
-        <text class='item-title'>到期日期：{{userInfo.card.endTime}}
+        <text class='item-title'>到期日期：{{endTime}}
         </text>
       </view>
-      <view class='info-item-bottom'>
-        <text class='item-title'>剩余次数：{{userInfo.card.restTimes}} 次
-        </text>
-      </view>     
+      <navigator class='info-item-bottom' url="payTimes" hover-class="navigator-hover">      
+        <text class='item-title'>剩余次数：{{userInfo.card.restTimes}} 次<text class='icon iconfont icon-arrowright' />
+        </text>     
+      </navigator>     
     </view>
   </view>
 </view>

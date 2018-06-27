@@ -1,0 +1,10 @@
+<!--pages/user/page/change.wxml-->
+<view class='changePages'>
+  <text>充值次数:
+  </text>
+  <view class='changeInput'>
+    <input bindinput='changeInput' type='number' />
+  </view>
+   <button class='sure'  catchtap='sure' type="primary">确定</button>
+</view>
+

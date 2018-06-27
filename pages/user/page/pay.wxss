@@ -1,0 +1,4 @@
+/* pages/user/page/pay.wxss */
+@import "../../compont/page-title.wxss";
+@import "../../compont/circle.wxss";
+@import "../../course/page/courseDetail.wxss";

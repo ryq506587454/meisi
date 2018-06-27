@@ -4,28 +4,14 @@
     <view class='noticeTitle'>通     知
     </view>
     <view class="notice-content">
-      <view class='notice-item'>
-        <text class ="notice-info">五一放假通知
+    <block wx:for="{{notice}}" wx:for-item="notice" wx:key="notice">
+     <navigator class='notice-item' url="noticeDetail?noticeId={{notice.noticeId}}" hover-class="navigator-hover">
+        <text class ="notice-info">{{notice.title}}
         </text>  
         <text class ="notice-date iconfont icon-arrowright">
         </text>        
-      </view>
-      <view class='notice-item'>    
-      </view>
-      <view class='notice-item'>    
-      </view>
-      <view class='notice-item'>    
-      </view>
-      <view class='notice-item'>    
-      </view>
-      <view class='notice-item'>    
-      </view>
-      <view class='notice-item'>    
-      </view>
-      <view class='notice-item'>    
-      </view>
-      <view class='notice-item'>
-      </view>
+    </navigator>
+    </block>  
     </view>
   </view>
 </view>

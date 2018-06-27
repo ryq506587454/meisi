@@ -1,0 +1,51 @@
+<!--pages/course/page/courseDetail.wxml-->
+<view class='courseDetailPage'>
+  <view class='page-title-top'>
+    <text>会员卡列表
+    </text>
+  </view>
+  <view class='courseDetail-content' bindtap='basicCard'>   
+    <view class='courseItem'>
+        <view class='courseName'>     
+          <block wx:for="{{circleClass}}" wx:for-item="circle" wx:key="circle">
+            <view class='{{circle}}' />
+          </block>   
+          <text>普通会员卡
+          </text>
+          <textarea disabled="true" value='     本会员卡为普通会员卡,享受一切基本会员权利，每次预约消耗一次' />
+          </view>
+          <view class="courseInfo">
+          <text class="number iconfont icon-createtask"  decode='true'> 会员卡价钱:&nbsp;&nbsp;&nbsp;￥50
+          </text>         
+          <text class="time iconfont icon-time" decode='true'> 会员卡时长:&nbsp;&nbsp;&nbsp;1&nbsp;年
+          </text> 
+          <text class="rotal iconfont icon-mine"  decode='true'> 会员卡次数:&nbsp;&nbsp;&nbsp;50&nbsp;次
+          </text>   
+        </view>
+    </view>
+  </view> 
+   <view class='courseDetail-content' bindtap='advancedCard'>   
+    <view class='courseItem'>
+        <view class='courseName'>     
+          <block wx:for="{{circleClass}}" wx:for-item="circle" wx:key="circle">
+            <view class='{{circle}}' />
+          </block>   
+          <text>高级会员卡
+          </text>
+          <textarea disabled="true" value='     本会员卡为高级会员卡,享受一切高级会员权利，每次预约消耗一次' />
+          </view>
+          <view class="courseInfo">
+          <text class="number iconfont icon-createtask"  decode='true'> 会员卡价钱:&nbsp;&nbsp;&nbsp;￥80
+          </text>         
+          <text class="time iconfont icon-time" decode='true'> 会员卡时长:&nbsp;&nbsp;&nbsp;2&nbsp;年
+          </text> 
+          <text class="rotal iconfont icon-mine" decode='true'> 会员卡次数:&nbsp;&nbsp;&nbsp;100&nbsp;次
+          </text>   
+        </view>
+    </view>  
+    <view class='foot'>
+        <text>--无更多--
+        </text>
+    </view>
+  </view>
+</view>

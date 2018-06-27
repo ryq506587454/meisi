@@ -1,6 +1,5 @@
 // pages/course/page/courseDetail.js
 Page({
-
   /**
    * 页面的初始数据
    */
@@ -191,7 +190,7 @@ Page({
       date: "全部日期"
     }),
       wx.request({
-        url: 'http://localhost:8080/MeiSI/Course_meidaFindByType',
+      url: 'http://localhost:8080/MeiSI/Course_meidaFindByType',
         method: 'POST',
         data: {
           courseType: self.data.courseType

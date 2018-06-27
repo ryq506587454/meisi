@@ -1,23 +1,32 @@
 {
   "pages": [
+    "pages/index",
+
     "pages/index/index",
-    "pages/login/page/regist",
-    "pages/login/login",   
+
     "pages/user/page/notic",
-    "pages/course/course",
+    "pages/user/page/noticeDetail",
+    "pages/user/user",
     "pages/user/page/aboutUs",
     "pages/user/page/myInfo",
-    "pages/user/user",
-    "pages/course/page/courseDetail",
-    "pages/course/page/appointment",
     "pages/user/page/myCourse",
     "pages/user/page/myCard",
-    "pages/index",
-    "pages/compont/page-title",
     "pages/user/page/change",
     "pages/user/page/changeSex",
-    "pages/index/page/eatAdvice"
+    "pages/user/page/pay",
+    "pages/user/page/payTimes",
+
+    "pages/login/page/regist",
+    "pages/login/login",
+
+    "pages/course/course",
+    "pages/course/page/courseDetail",
+    "pages/course/page/appointment",
    
+    "pages/compont/page-title",
+     
+    "pages/index/page/eatAdvice"
+    
   ],
   "window": {
     "backgroundTextStyle": "light",
