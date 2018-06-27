@@ -31,7 +31,8 @@
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarTitleText": "MeiSi健身",
-    "navigationBarTextStyle": "white"
+    "navigationBarTextStyle": "white",
+    "enablePullDownRefresh": true
   },
   "tabBar": {
     "color": "#7A7E83",

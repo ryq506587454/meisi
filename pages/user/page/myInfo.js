@@ -8,6 +8,16 @@ Page({
   data: {
     userInfo:{}
   },
+  onPullDownRefresh: function () {
+    wx.showNavigationBarLoading();
+    this.setData({
+      userInfo: app.globalData.userInfo
+    });  
+    setTimeout(function () {  
+      wx.hideNavigationBarLoading();
+      wx.stopPullDownRefresh();
+    }, 1000);
+  },
   /**
    * 生命周期函数--监听页面加载
    */
