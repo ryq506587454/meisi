@@ -2,6 +2,8 @@
   <view class='notice'>
     <view class='noticeTitle'>通     知
     </view>
+    <view class='noticeDate'>{{publishTime}}
+    </view>
     <view class="notice-content">
       <textarea>{{notice.noticeDetail}}
       </textarea>
